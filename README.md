@@ -11,3 +11,7 @@
 ### How to run this software:
     - Clone folder which has the prefix "Release"
     - Run exe file.
+### Demo:
+(Note: You can add several spaces in input, the app will auto remove them and process)
+
+![plot](https://github.com/ngxx-fus/data-frame-extracting/blob/main/WindowsFormsApp1_R5qarcpIj1.png?raw=true)
