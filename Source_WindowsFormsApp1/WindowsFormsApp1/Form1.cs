@@ -99,7 +99,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string inp = textBox1.Text;
+            string inp = textBox1.Text.Replace(" ", "");
             Tuple<char, char> DATA = get_DATA(inp);
             char P = get_Parity(inp);
             label5.Text = DATA.Item2.ToString();
@@ -159,7 +159,7 @@ namespace WindowsFormsApp1
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string inp = textBox1.Text;
+            string inp = textBox1.Text.Replace(" ", "");
             if(inp.Length == 10 || inp.Length == 8)
             {
                 Tuple<char, char> DATA = get_DATA(inp);
