@@ -104,8 +104,17 @@ namespace WindowsFormsApp1
             char P = get_Parity(inp);
             label5.Text = DATA.Item2.ToString();
             label6.Text = DATA.Item1.ToString();
-            if(inp.Length == 10) label7.Text = P.ToString();
-            
+            if (inp.Length == 10)
+            {
+                label7.Text = (P == '1') ? ("odd") : ("even");
+                label13.Text = inp[0].ToString();
+            }
+            else
+            {
+                label7.Text = "nothing ...";
+                label13.Text = "nothing ...";
+            }
+
             if ('A' < DATA.Item2 && DATA.Item2 < 'Z' || 'a' < DATA.Item2 && DATA.Item2 < 'z')
                 label12.Text = (inp.Length==10)?inp.Substring(1, 8):inp;
             else
@@ -157,7 +166,14 @@ namespace WindowsFormsApp1
                 char P = get_Parity(inp);
                 label5.Text = DATA.Item2.ToString();
                 label6.Text = DATA.Item1.ToString();
-                if (inp.Length == 10) label7.Text = P.ToString();
+                if (inp.Length == 10)
+                {
+                    label7.Text = (P == '1') ? ("odd") : ("even");
+                    label13.Text = inp[0].ToString();
+                }else{
+                    label7.Text = "nothing ...";
+                    label13.Text = "nothing ...";
+                }
                 if ('A' < DATA.Item2 && DATA.Item2 < 'Z' || 'a' < DATA.Item2 && DATA.Item2 < 'z')
                     label12.Text = (inp.Length == 10) ? inp.Substring(1, 8) : inp;
                 else
@@ -172,6 +188,8 @@ namespace WindowsFormsApp1
                 label5.Text = "nothing ...";
                 label6.Text = "nothing ...";
                 label7.Text = "nothing ...";
+                label7.Text = "nothing ...";
+                label13.Text = "nothing ...";
                 label12.ResetText();
                 label11.ResetText();
             }

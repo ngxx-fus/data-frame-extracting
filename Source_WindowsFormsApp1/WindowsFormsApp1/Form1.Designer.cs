@@ -44,6 +44,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -86,9 +88,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(18, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 13);
+            this.label2.Size = new System.Drawing.Size(178, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "DATA Extracted (MSB->LSB):";
+            this.label2.Text = "Extracted DATA  (MSB->LSB):";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
@@ -99,17 +101,19 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(174, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "DATA Extracted (LSB->MSB):";
+            this.label3.Text = "Extracted DATA (LSB->MSB):";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(145, 139);
+            this.label4.Location = new System.Drawing.Point(149, 139);
             this.label4.Name = "label4";
+            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Parity: ";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
@@ -170,9 +174,9 @@
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Location = new System.Drawing.Point(18, 75);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(279, 13);
+            this.label10.Size = new System.Drawing.Size(31, 13);
             this.label10.TabIndex = 12;
-            this.label10.Text = "NOTE: with 10bits input, start bit mus equal 1 (the first bit)!";
+            this.label10.Text = "******";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
@@ -196,11 +200,34 @@
             this.label12.Text = "nothing ...";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(198, 161);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 13);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "nothing ...";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(136, 161);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(56, 13);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "Start bit:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 251);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -240,6 +267,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }
 
