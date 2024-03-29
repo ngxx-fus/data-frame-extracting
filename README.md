@@ -8,3 +8,6 @@
     - Data
     - Parity
     - Start bit
+### How to run this software:
+    - Clone folder which have the prefix is "Release"
+    - Run exe file.
