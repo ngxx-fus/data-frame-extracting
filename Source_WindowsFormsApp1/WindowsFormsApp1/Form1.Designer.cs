@@ -50,12 +50,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -249,7 +249,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(92, 21);
             this.button3.TabIndex = 20;
-            this.button3.Text = "Parity bit toggle";
+            this.button3.Text = "Parity bit: even";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -259,7 +259,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(92, 21);
             this.button4.TabIndex = 21;
-            this.button4.Text = "Start bit toggle";
+            this.button4.Text = "Start bit: 0";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -279,43 +279,16 @@
             this.groupBox1.Text = "10 bits data-frame:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label16
+            // label21
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(49, 17);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 13);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "PARITY BIT";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(129, 17);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(61, 13);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "DATA BITs";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(211, 17);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(63, 13);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "START BIT";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(75, 30);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(12, 13);
-            this.label19.TabIndex = 3;
-            this.label19.Text = "x";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(237, 30);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(12, 13);
+            this.label21.TabIndex = 5;
+            this.label21.Text = "x";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // label20
             // 
@@ -327,16 +300,43 @@
             this.label20.Text = "xxxx xxxx";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label21
+            // label19
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(237, 30);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(12, 13);
-            this.label21.TabIndex = 5;
-            this.label21.Text = "x";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label21.Click += new System.EventHandler(this.label21_Click);
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(75, 30);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(12, 13);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "x";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(211, 17);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(63, 13);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "START BIT";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(129, 17);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(61, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "DATA BITs";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(49, 17);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 13);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "PARITY BIT";
             // 
             // Form1
             // 

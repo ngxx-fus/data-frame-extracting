@@ -141,13 +141,14 @@ namespace WindowsFormsApp1
                 label15.Text = "Data-frame:";
                 //button3.Text = "Parity bit: even";
                 //button4.Text = "Start bit: 0";
-                label19.Text = parity.ToString();
+                label19.Text = parity.ToString(); label19.Refresh();
                 label20.Text = data.Substring(0, 4) + " " + data.Substring(4,4);
-                label21.Text = start.ToString();
+                label21.Text = start.ToString(); label21.Refresh();
+
             }
 
         }
-        public void convert_to_datagram_process(string inp, char parity = '0', char start  = '0')
+        public void convert_to_datagram_process(string inp, char parity, char start)
         {
             if (inp.Length == 1)
             {
@@ -293,7 +294,7 @@ namespace WindowsFormsApp1
             string inp = textBox1.Text.Replace(" ", "");
             current_parity = (current_parity == '0') ? ('1') : ('0');
             //button3.Text = current_parity.ToString();
-            //button3.ResetText();
+            button3.ResetText();
             button3.Text = (current_parity == '0') ? ("Parity bit: even") : ("Parity bit: odd");
             convert_to_datagram_process(inp, current_parity, current_start);
         }
