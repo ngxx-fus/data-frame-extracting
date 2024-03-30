@@ -12,6 +12,9 @@
     - Clone folder which has the prefix "Release"
     - Run exe file.
 ### Demo:
-(Note: You can add several spaces in input, the app will auto remove them and process)
+*You can add several spaces in input, the app will auto remove them and process:
 
+![plot](https://github.com/ngxx-fus/data-frame-extracting/blob/main/WindowsFormsApp1_R5qarcpIj1.png?raw=true)
+
+*Auto create 10bits data-frame when you type 1 character!
 ![plot](https://github.com/ngxx-fus/data-frame-extracting/blob/main/WindowsFormsApp1_R5qarcpIj1.png?raw=true)
