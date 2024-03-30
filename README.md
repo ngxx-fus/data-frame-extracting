@@ -5,9 +5,11 @@
 ### Recorded in OSC: 
     <1 bit of start bit> <8 bits of data LSB -> MSB> <1 bit of parity >
 ### This software:
-    - Data
-    - Parity
-    - Start bit
+    Extract from input data:
+        - Data
+        - Parity
+        - Start bit
+    Create 10bits data-frame. 
 ### How to run this software:
     - Clone folder which has the prefix "Release"
     - Run exe file.
