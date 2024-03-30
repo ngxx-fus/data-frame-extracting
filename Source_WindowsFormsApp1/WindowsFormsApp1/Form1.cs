@@ -13,9 +13,12 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        private char current_parity = '0';
+        private char current_start = '0';
         public Form1()
         {
             InitializeComponent();
+            show_data_frame('\0', '\0', "", '\0');
         }
         public string Reverse(string Input)
         {
@@ -92,6 +95,72 @@ namespace WindowsFormsApp1
                 p += (bool)(inp[i] == '1')?(1):(0);
             return (char)('0' + p % 2);
         }
+        //return MSB->LSB bit
+        public string char_to_binary(char c)
+        {
+            string str = "";
+            int num = (int)c;
+            for (int i = 0; i < 8; i++)
+            {
+                str += (num % 2 == 1) ? ('1'.ToString()) : ('0'.ToString());
+                num /= 2;
+            }
+            char[] tmp = str.ToCharArray();
+            Array.Reverse(tmp);
+            str = new string(tmp);
+            return str;
+
+        }
+        public void show_data_frame(char flag, char parity, string data, char start)
+        {
+            if (flag != 's' && flag != 'S')//hidden
+            {
+                button3.Hide();
+                button4.Hide();
+                label15.Hide();
+                label16.Hide(); 
+                label17.Hide();
+                label18.Hide();
+                label19.Hide();
+                label20.Hide();
+                label21.Hide();
+                groupBox1.Hide();
+            }
+            else
+            {
+                button3.Show();
+                button4.Show();
+                label15.Show();
+                label16.Show();
+                label17.Show();
+                label18.Show();
+                label19.Show();
+                label20.Show();
+                label21.Show();
+                groupBox1.Show();
+                label15.Text = "Data-frame:";
+                //button3.Text = "Parity bit: even";
+                //button4.Text = "Start bit: 0";
+                label19.Text = parity.ToString();
+                label20.Text = data.Substring(0, 4) + " " + data.Substring(4,4);
+                label21.Text = start.ToString();
+            }
+
+        }
+        public void convert_to_datagram_process(string inp, char parity = '0', char start  = '0')
+        {
+            if (inp.Length == 1)
+            {
+                char sum_1bit = get_Parity(char_to_binary(inp[0]));
+                if (parity == '0') parity = (sum_1bit == '0') ? ('0') : ('1');
+                if (parity == '1') parity = (sum_1bit == '0') ? ('1') : ('0');
+                show_data_frame('s', parity, char_to_binary(inp[0]), start);
+            }
+            else
+            {
+                show_data_frame('\0', '\0', "", '\0');
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -100,6 +169,7 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             string inp = textBox1.Text.Replace(" ", "");
+            convert_to_datagram_process(inp, current_parity, current_start);
             Tuple<char, char> DATA = get_DATA(inp);
             char P = get_Parity(inp);
             label5.Text = DATA.Item2.ToString();
@@ -131,36 +201,33 @@ namespace WindowsFormsApp1
         {
 
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label4_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label5_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label8_Click(object sender, EventArgs e)
         {
 
         }
-
         private void label10_Click(object sender, EventArgs e)
         {
 
         }
-
+        
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string inp = textBox1.Text.Replace(" ", "");
-            if(inp.Length == 10 || inp.Length == 8)
+            convert_to_datagram_process(inp, current_parity, current_start);
+            if (inp.Length == 10 || inp.Length == 8)
             {
                 Tuple<char, char> DATA = get_DATA(inp);
                 char P = get_Parity(inp);
@@ -193,11 +260,50 @@ namespace WindowsFormsApp1
                 label12.ResetText();
                 label11.ResetText();
             }
+
         }
 
         private void label12_Click(object sender, EventArgs e)
         {
 
+        }
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void label21_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string inp = textBox1.Text.Replace(" ", "");
+            current_parity = (current_parity == '0') ? ('1') : ('0');
+            //button3.Text = current_parity.ToString();
+            //button3.ResetText();
+            button3.Text = (current_parity == '0') ? ("Parity bit: even") : ("Parity bit: odd");
+            convert_to_datagram_process(inp, current_parity, current_start);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string inp = textBox1.Text.Replace(" ", "");
+            current_start = (current_start == '0') ? ('1') : ('0');
+            button4.Text = (current_start == '0') ? ("Start bit: 0") : ("Parity bit: 1");
+            convert_to_datagram_process(inp, current_parity, current_start);
         }
     }
 }
